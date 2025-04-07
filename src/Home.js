@@ -68,20 +68,34 @@ function Home() {
         )}
 
         <button className="analyze-button" onClick={handleUpload}>Analyze</button>
+
+        {/* Display Results */}
+        {result && (
+          <div >
+            <h2>Analysis Result:</h2>
+            <p><b>Class Name:</b> {result.class_name}</p>
+            {/*<p><b>Additional Info:</b> {result.additional_info}</p>*/}
+            <button className="report-button" onClick={() => navigate("/report", { state: result })}>
+              View Full Report
+            </button>
+          </div>
+        )}
+
       </div>
 
-      {/* Display Results */}
+      {/* Display Results 
       {result && (
         <div className="result-container">
           <h2>Analysis Result:</h2>
           <img src={result.image_url} alt="Analyzed" className="result-image" />
           <p><b>Class Name:</b> {result.class_name}</p>
-          <p><b>Additional Info:</b> {result.additional_info}</p>
           <button className="report-button" onClick={() => navigate("/report", { state: result })}>
             View Full Report
           </button>
         </div>
       )}
+      */}
+      
     </div>
   );
 }
