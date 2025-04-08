@@ -173,3 +173,46 @@ body {
     width: 90%;
   }
 }
+.loader {
+  display: inline-block;
+  font-size: 22px; /* Adjust size as needed */
+  line-height: 1;
+}
+
+.loader span {
+  display: inline-block;
+  width: 8px; /* Adjust dot size */
+  height: 8px; /* Adjust dot size */
+  background-color: #fff; /* Adjust dot color to contrast with button text */
+  border-radius: 50%;
+  margin-right: 5px;
+  animation: dot-pulse 1.5s infinite;
+}
+
+.loader span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.loader span:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes dot-pulse {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+}
+
+.analyze-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
